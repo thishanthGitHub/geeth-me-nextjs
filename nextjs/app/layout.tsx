@@ -12,6 +12,11 @@ export const metadata: Metadata = {
     default: "Geeth Me Restaurant — Trincomalee",
     template: "%s — Geeth Me",
   },
+  icons: {
+    icon: "/icon.svg",
+    shortcut: "/icon.svg",
+    apple: "/icon.svg",
+  },
   description:
     "Sri Lankan seafood in Trincomalee since 2004. Crab curry, kottu roti and devilled prawns on Dockyard Road.",
   keywords: [
