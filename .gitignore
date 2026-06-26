@@ -20,6 +20,15 @@ dist-ssr
 .wrangler/
 .dev.vars
 
+# Environment variables
+.env
+.env.*
+.env.local
+
+# Next.js build output
+nextjs/.next/
+nextjs/out/
+
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json
