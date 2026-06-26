@@ -1,60 +1,36 @@
-# Geeth.me Restaurant
+This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
-A restaurant website with online ordering and admin management.
+## Getting Started
 
-## Project Structure
+First, run the development server:
 
-```
-/
-├── src/                   # Vite + TanStack Start app (original, Cloudflare Workers)
-├── nextjs/                # Next.js port (in progress)
-├── supabase/              # Supabase migrations and config
-├── public/                # Static assets for root app
-└── wrangler.jsonc         # Cloudflare Workers config
-```
-
-## Apps
-
-### Root app (`/`) — Vite + TanStack Start
-- Runs on Cloudflare Workers via Wrangler
-- Auth via Supabase
-- Full routing: home, menu, order, admin, account, login
-
-**Dev:**
 ```bash
-npm install
 npm run dev
+# or
+yarn dev
+# or
+pnpm dev
+# or
+bun dev
 ```
 
-**Deploy:**
-```bash
-npm run deploy
-```
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-### Next.js app (`/nextjs`) — Next.js 15
-- In-progress port of the root app
-- App Router with server components
+You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
-**Dev:**
-```bash
-cd nextjs
-npm install
-npm run dev
-```
+This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
 
-## Environment Variables
+## Learn More
 
-Copy `.env.example` to `.env` and fill in your Supabase credentials:
+To learn more about Next.js, take a look at the following resources:
 
-```
-VITE_SUPABASE_URL=
-VITE_SUPABASE_ANON_KEY=
-```
+- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
+- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
-For the Next.js app, copy `nextjs/.env.local.example` to `nextjs/.env.local`.
+You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
 
-## Tech Stack
+## Deploy on Vercel
 
-- **Frontend:** React, TailwindCSS, shadcn/ui, GSAP
-- **Backend:** Supabase (Postgres, Auth, Storage)
-- **Deployment:** Cloudflare Workers (root), Vercel (nextjs)
+The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+
+Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
