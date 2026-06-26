@@ -3,6 +3,8 @@ import "./globals.css";
 import { Providers } from "./providers";
 import { Toaster } from "sonner";
 import { SmoothScroll } from "@/components/site/SmoothScroll";
+import { SpeedInsights } from "@vercel/speed-insights/next";
+import { Analytics } from "@vercel/analytics/next";
 
 // Set theme before first paint to prevent flash
 const themeScript = `(function(){try{var t=localStorage.getItem('theme');if(!t)t='dark';document.documentElement.classList.remove('light','dark');document.documentElement.classList.add(t);}catch(e){document.documentElement.classList.add('dark');}})();`;
@@ -61,6 +63,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           <SmoothScroll />
           {children}
           <Toaster />
+          <SpeedInsights />
+          <Analytics />
         </Providers>
       </body>
     </html>
