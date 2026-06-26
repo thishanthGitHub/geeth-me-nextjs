@@ -1,0 +1,117 @@
+# Geeth Me Restaurant — Menu Data
+# Format:
+#   SECTION id|Title
+#   SECTION id|Title|note
+#   ITEM    n|Name|price          (single price in LKR)
+#   ITEM    n|Name|s:X|r:Y        (small / regular prices)
+# Lines starting with # are comments and are ignored.
+
+SECTION drinks|Drinks
+ITEM 1|Soft Drinks|100
+ITEM 2|Mineral Water|160
+
+SECTION soup|Soup
+ITEM 3|Cream of Vegetable Soup|380
+ITEM 4|Cream of Chicken Soup|500
+ITEM 5|Cream of Mixed Soup|750
+ITEM 6|Sea Food Soup|730
+
+SECTION rice-curry|Rice & Curry
+ITEM 7|Chicken Rice & Curry|450
+ITEM 8|Fish Rice & Curry|380
+ITEM 9|Vegetable Rice & Curry|330
+ITEM 10|Egg Rice & Curry (Omelet)|380
+ITEM 11|Egg Rice & Curry (Bullae)|350
+
+SECTION sunday|Sunday Special — Rice & Curry
+ITEM 12|Fish|450
+ITEM 13|Chicken|550
+
+SECTION fried-rice|Fried Rice
+ITEM 14|Mixed Fried Rice|s:950|r:1550
+ITEM 15|Sea Food Fried Rice|s:900|r:1500
+ITEM 16|Fried Rice with Prawns|s:850|r:1450
+ITEM 17|Fried Rice with Chicken|s:650|r:1200
+ITEM 18|Fried Rice with Beef|s:750|r:1350
+ITEM 19|Fried Rice with Fish|s:750|r:1050
+ITEM 20|Fried Rice with Egg|s:600|r:900
+ITEM 21|Fried Rice with Vegetable|s:500|r:800
+
+SECTION noodles|Noodles
+ITEM 22|Mixed Fried Noodles|s:980|r:1600
+ITEM 23|Sea Food Fried Noodles|s:950|r:1550
+ITEM 24|Fried Noodles with Prawns|s:900|r:1480
+ITEM 25|Fried Noodles with Chicken|s:700|r:1300
+ITEM 26|Fried Noodles with Beef|s:780|r:1400
+ITEM 27|Fried Noodles with Egg|s:630|r:1080
+ITEM 28|Fried Noodles with Vegetable|s:550|r:930
+
+SECTION meegoreng|Mee Goreng
+ITEM 29|Mixed Mee Goreng|1250
+ITEM 30|Sea Food Mee Goreng|1200
+ITEM 31|Chicken Mee Goreng|900
+
+SECTION nasi|Nasi Goreng / Grill Chicken|Seafood, veg salad, fried egg, and chili paste
+ITEM 32|Mixed Nasi Goreng|1400
+ITEM 33|Sea Food Nasi Goreng|1350
+ITEM 34|Chicken Nasi Goreng|1200
+ITEM 35|Beef Nasi Goreng|1300
+
+SECTION spicy-rice|Spicy Rice
+ITEM 36|Mixed Spicy Rice|1250
+ITEM 37|Sea Food Spicy Rice|1200
+ITEM 38|Chicken Spicy Rice|900
+ITEM 39|Beef Spicy Rice|1050
+
+SECTION koththu|Koththu
+ITEM 57|Mixed Koththu|s:950|r:1550
+ITEM 58|Sea Food Koththu|s:900|r:1500
+ITEM 59|Chicken Koththu|s:650|r:1200
+ITEM 60|Beef Koththu|s:750|r:1350
+ITEM 61|Egg Koththu|s:480|r:800
+ITEM 62|Vegetable Koththu|s:400|r:750
+ITEM 63|Fish Koththu|s:750|r:1350
+ITEM 64|Chicken Breast (Boneless)|s:750|r:1350
+
+SECTION cheese-koththu|Cheese Koththu — Geeth Me Special
+ITEM 65|Mixed Cheese Koththu|1450
+ITEM 66|Sea Food Cheese Koththu|1400
+ITEM 67|Chicken Cheese Koththu|1100
+ITEM 68|Beef Cheese Koththu|1200
+ITEM 69|Egg Cheese Koththu|900
+ITEM 70|Vegetable Cheese Koththu|800
+ITEM 71|Fish Cheese Koththu|1300
+ITEM 72|Chicken Breast (Boneless) Koththu|1200
+
+SECTION prawns|Prawns
+ITEM 91|Hot Butter Jumbo Prawns|2400
+ITEM 92|Hot Butter Prawns|1950
+ITEM 93|Battered Prawns|1950
+ITEM 94|Fried Prawns|1600
+ITEM 95|Devilled Prawns|1700
+ITEM 96|Sri Lankan Prawns Curry|1850
+
+SECTION crab|Crab
+ITEM 97|Fried Crabs|1650
+ITEM 98|Devilled Crabs|1750
+ITEM 99|Sri Lankan Crabs Curry|1900
+
+SECTION chicken|Chicken
+ITEM 100|Fried Chicken|1250
+ITEM 101|Devilled Chicken|1300
+ITEM 102|Black Pepper Chicken|1900
+
+SECTION beef|Beef
+ITEM 103|Fried Beef|1400
+ITEM 104|Devilled Beef|1500
+ITEM 105|Black Pepper Beef|1750
+
+SECTION deviled|Devilled
+ITEM 108|Mix Devilled|3000
+ITEM 109|Sea Food Devilled|2800
+
+SECTION omelet|Omelet
+ITEM 110|Sri Lankan Omelet|400
+ITEM 111|Cheese Omelet|550
+ITEM 112|Chicken Omelet|550
+ITEM 113|Spinach & Prawns Omelet|650

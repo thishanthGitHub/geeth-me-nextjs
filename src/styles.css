@@ -1,0 +1,199 @@
+@import url("https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500;9..144,600&family=Inter:wght@300;400;500;600;700&display=swap");
+@import "tailwindcss" source(none);
+@source "../src";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --font-display: "Fraunces", serif;
+  --font-sans: "Inter", system-ui, sans-serif;
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-ring-offset-background: var(--background);
+}
+
+:root {
+  --radius: 0.25rem;
+  /* Light theme — warm cream + amber */
+  --background: oklch(0.98 0.012 85);
+  --foreground: oklch(0.2 0.02 60);
+  --card: oklch(0.96 0.018 85);
+  --card-foreground: oklch(0.2 0.02 60);
+  --popover: oklch(0.98 0.012 85);
+  --popover-foreground: oklch(0.2 0.02 60);
+  --primary: oklch(0.62 0.14 60);
+  --primary-foreground: oklch(0.98 0.012 85);
+  --secondary: oklch(0.92 0.02 80);
+  --secondary-foreground: oklch(0.22 0.02 60);
+  --muted: oklch(0.92 0.02 80);
+  --muted-foreground: oklch(0.45 0.02 65);
+  --accent: oklch(0.62 0.14 60);
+  --accent-foreground: oklch(0.98 0.012 85);
+  --destructive: oklch(0.58 0.22 27);
+  --destructive-foreground: oklch(0.98 0.01 80);
+  --border: oklch(0.88 0.02 75);
+  --input: oklch(0.88 0.02 75);
+  --ring: oklch(0.62 0.14 60);
+}
+
+.dark {
+  --background: oklch(0.13 0.005 60);
+  --foreground: oklch(0.96 0.01 80);
+  --card: oklch(0.17 0.008 60);
+  --card-foreground: oklch(0.96 0.01 80);
+  --popover: oklch(0.17 0.008 60);
+  --popover-foreground: oklch(0.96 0.01 80);
+  --primary: oklch(0.78 0.11 70);
+  --primary-foreground: oklch(0.13 0.005 60);
+  --secondary: oklch(0.22 0.01 60);
+  --secondary-foreground: oklch(0.96 0.01 80);
+  --muted: oklch(0.22 0.01 60);
+  --muted-foreground: oklch(0.65 0.02 70);
+  --accent: oklch(0.78 0.11 70);
+  --accent-foreground: oklch(0.13 0.005 60);
+  --destructive: oklch(0.6 0.22 27);
+  --destructive-foreground: oklch(0.98 0.01 80);
+  --border: oklch(0.28 0.01 60);
+  --input: oklch(0.28 0.01 60);
+  --ring: oklch(0.78 0.11 70);
+}
+
+/* Lenis drives smooth scrolling; native smooth-behavior would fight it */
+html.lenis, html.lenis body { height: auto; }
+.lenis.lenis-smooth { scroll-behavior: auto !important; }
+.lenis.lenis-smooth [data-lenis-prevent] { overscroll-behavior: contain; }
+.lenis.lenis-stopped { overflow: hidden; }
+
+/* Theme-only color transition (scoped to <html>, not every element) */
+html { transition: background-color 0.5s cubic-bezier(0.22, 1, 0.36, 1), color 0.5s cubic-bezier(0.22, 1, 0.36, 1); }
+
+/* View Transitions: silky cross-fade on theme toggle */
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation-duration: 0.6s;
+  animation-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
+  mix-blend-mode: normal;
+}
+::view-transition-old(root) { animation-name: theme-fade-out; }
+::view-transition-new(root) { animation-name: theme-fade-in; }
+@keyframes theme-fade-out { to { opacity: 0; } }
+@keyframes theme-fade-in  { from { opacity: 0; } }
+
+@media (prefers-reduced-motion: reduce) {
+  html, * { transition: none !important; animation: none !important; }
+}
+
+
+@layer base {
+  * {
+    border-color: var(--color-border);
+  }
+  html, body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    overflow-x: clip;
+  }
+  body { width: 100%; }
+  img, video { max-width: 100%; height: auto; }
+
+  /* Hide native scrollbars site-wide for a clean, butter-smooth feel */
+  html { scrollbar-width: none; -ms-overflow-style: none; }
+  html::-webkit-scrollbar { width: 0; height: 0; display: none; }
+  body::-webkit-scrollbar { width: 0; height: 0; display: none; }
+  *::-webkit-scrollbar { width: 0; height: 0; }
+  * { scrollbar-width: none; }
+}
+
+@layer utilities {
+  .font-display { font-family: var(--font-display); }
+
+  /* ============ Fluid type scale (rem + clamp) ============ */
+  /* Smoothly scales between mobile and desktop, prevents overflow on small screens */
+  .text-fluid-display { font-size: clamp(2.5rem, 9vw, 7.5rem); line-height: 0.95; letter-spacing: -0.02em; }
+  .text-fluid-h1      { font-size: clamp(2rem, 7vw, 5.5rem);   line-height: 1.02; letter-spacing: -0.015em; }
+  .text-fluid-h2      { font-size: clamp(1.75rem, 5.5vw, 4rem); line-height: 1.05; letter-spacing: -0.01em; }
+  .text-fluid-h3      { font-size: clamp(1.5rem, 4vw, 2.5rem); line-height: 1.1; }
+  .text-fluid-lead    { font-size: clamp(0.95rem, 1.6vw, 1.125rem); line-height: 1.55; }
+  .text-fluid-body    { font-size: clamp(0.875rem, 1.3vw, 1rem); line-height: 1.6; }
+  .text-fluid-eyebrow { font-size: clamp(0.625rem, 1vw, 0.75rem); letter-spacing: 0.25em; }
+
+  .marquee-track {
+    display: flex;
+    width: max-content;
+    animation: marquee 30s linear infinite;
+  }
+  @keyframes marquee {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+  }
+  .no-scrollbar::-webkit-scrollbar { display: none; }
+  .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+
+
+  /* ============ Animated icon utilities ============ */
+  @keyframes icon-flicker {
+    0%, 100% { transform: scale(1) rotate(-2deg); opacity: 1; }
+    40%      { transform: scale(1.12) rotate(2deg); opacity: 0.92; }
+    70%      { transform: scale(0.95) rotate(-1deg); opacity: 1; }
+  }
+  .icon-flame { animation: icon-flicker 1.8s ease-in-out infinite; transform-origin: center bottom; }
+
+  @keyframes icon-twinkle {
+    0%, 100% { transform: scale(1) rotate(0deg); opacity: 0.85; }
+    50%      { transform: scale(1.25) rotate(20deg); opacity: 1; }
+  }
+  .icon-sparkle { animation: icon-twinkle 2.6s ease-in-out infinite; transform-origin: center; }
+
+  @keyframes icon-pulse-ring {
+    0%, 100% { transform: scale(1); opacity: 1; }
+    50%      { transform: scale(1.18); opacity: 0.85; }
+  }
+  .icon-pulse { animation: icon-pulse-ring 2.4s ease-in-out infinite; transform-origin: center; }
+
+  @keyframes icon-float {
+    0%, 100% { transform: translateY(0); }
+    50%      { transform: translateY(-6px); }
+  }
+  .icon-float { animation: icon-float 3.4s ease-in-out infinite; }
+
+  @keyframes icon-wiggle {
+    0%, 100% { transform: rotate(0deg); }
+    25%      { transform: rotate(-12deg); }
+    50%      { transform: rotate(0deg); }
+    75%      { transform: rotate(12deg); }
+  }
+  .icon-wiggle-hover { transition: transform 0.2s ease; transform-origin: 50% 80%; }
+  a:hover .icon-wiggle-hover,
+  button:hover .icon-wiggle-hover { animation: icon-wiggle 0.5s ease-in-out; }
+
+  @media (prefers-reduced-motion: reduce) {
+    .marquee-track,
+    .icon-flame, .icon-sparkle, .icon-pulse, .icon-float, .icon-wiggle-hover {
+      animation: none !important;
+    }
+  }
+}

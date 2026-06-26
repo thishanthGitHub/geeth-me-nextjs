@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+Disallow: /account
+Disallow: /login
+Disallow: /order
+
+Sitemap: https://geeth-me-restaurant-tco.lovable.app/sitemap.xml
